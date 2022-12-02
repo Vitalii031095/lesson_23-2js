@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>javascript урок 2</h1>
+   <h4>Відео1(оператори)</h4>
+  <b> Вариант №1</b> <br>
+console.log('35' + - "22"); <br>
+Вернет 13 <br>
+<mark>якщо оператори поміняти місцями то правельно, і + не обовязкова так як при відімані автоматично переводить тип</mark> <br>
+<b>Вариант №2 </b><br>
+console.log('35' * "22"); <br>
+Вернет 770 <br>
+<mark>Правельно</mark> <br>
+<b>Вариант №3 </b> <br>
+console.log('558' > 22++); <br>
+Вернет true <br>
+<mark>суфіксний/префіксний інкремент/дикремент можна використовувати з переміною тільки</mark> <br>
+<b>Вариант №4</b> <br>
+let usersCounter = 0; <br>
+let newUsers = usersCounter++; <br>
+console.log(newUsers); <br>
+Вернет 1 <br>
+<mark>верне 0</mark> <br>
+<b>Вариант №5</b>
+console.log(!false && 11 || 18 && !''); <br>
+Вернет 18 <br>
+<mark>Верне 11</mark> <br>
+
+<b>Вариант №6</b> <br>
+let name = 0; <br>
+console.log(name ?? "Без имени") <br>
+<mark> "Без имени"</mark>
+<hr>
+<h4>Відео2(if/else/else if)</h4>
+<hr>
+<b>Вариант №1</b> <br>
+if (1 === "1") { <br>
+	console.log('Истина!'); <br>
+} else { <br>
+	console.log('Ложь!'); <br>
+} <mark>Ложь!</mark> <br>
+<b>Вариант №2</b> <br>
+if (5 == "5") {<br>
+	console.log('Истина!');<br>
+} else {<br>
+	console.log('Ложь!');<br>
+} <mark>Истина!</mark>
+<b>Вариант №3</b> <br>
+let message = (92 > '11' && 58 < 100) ? 'Истина!' : 'Ложь!';<br>
+console.log(message);<br>
+<mark>Истина!</mark> <br>
+<b>Вариант №4</b> <br>
+if (0) {<br>
+	console.log('Ложь!');<br>
+} else if (" ") {<br>
+	console.log('Истина!');<br>
+}<mark>Истина!</mark>
+<hr>
+<h4>Відео3(цикли)</h4>
+<hr>
+Задача №2 <br>
+let num = 8; <br>
+while (num) { <br>
+	//Последний результат 0, верно? br
+	console.log(num); <br>
+	num--;<br>
+} <mark>останій результат 1</mark> <br>
+<b>Задача №3. Переписать на while </b><br>
+// for (let num = 0; num < 3; num++) {
+// 	console.log(`Число: ${num}`);
+// } <br>
+let num = 0;
+while(num < 3){
+   console.log(`Число: ${num}`);
+   num++;
+}; <br>
+<b>Задача №4. Прекратить работу цикла №1 когда size равна 1</b> <br>
+//Цикл №1
+ forOne: for (let num = 0; num < 2; num++) {<br>
+	//Цикл №2
+	for (let size = 0; size < 3; size++) {
+		
+      if(size === 1){
+         continue forOne;
+      }
+      console.log(size);
+	}
+} <br>
+<b>Задача вивести в консоль1-4</b> <br>
+// video 3
+// num = 0;
+// while(num < 5){
+//    console.log(num);
+//    num ++
+// }
+
+// for(; num < 5; num++) {
+//    console.log(num)
+// } <hr>
+<h4>Відео4(Number)</h4>
+<hr>
+<b>Задача №1. Получить верное значение округления</b> <br>
+let numOne = Math.round(1.005 * 100) / 100;
+console.log(numOne); // Выведет 1 что не верно <br>
+<mark>let numOne = Math.round((1.005 + Number.EPSILON) * 100 ) / 100;
+   console.log(numOne);
+    </mark>
+   <b> Задача №2. Получить число 135.58 из строки</b> <br>
+let value = "135.58px"; <br>
+<mark>console.log(parseFloat(value));</mark> <br>
+<b>Задача №3. Посттроить верное условное ветвление</b>
+let value = 58 + "Фрилансер";
+if (написать ответ) {
+	console.log('Результат выражения NaN');
+} <br>
+<mark>
+   let value = 58 + "Фрилансер";
+   if (value !== NaN) {
+   	console.log('Результат выражения NaN');
+   } <br>
+</mark>
+ <b>Задача №4.</b>
+Найти максимальное число из 10,58,39,-150,0
+<mark>console.log(Math.max(10,58,39,-150,0))</mark>  <br>
+
+<b>Задача №5.</b>
+Округлить число 58.858 до числа 58
+<mark>console.log(Math.floor(58.858))</mark>
+<hr>
+<h3>Відео 5 (строки)</h3> <hr>
+ <b>Задача №1. Верна ли запись?</b> <br>
+let fls = "фрилансер";
+let text = 'Привет! Я ${fls}'; <br>
+// Ожидаем получить Привет! Я фрилансер
+console.log(text);
+<mark>Не правельно, правельна булоб поставити обратні скобки</mark> <br>
+
+<b> Задача №2. Получить символ "н" строки:</b>
+let text = 'фрилансер';
+<mark>console.log(text[5])</mark> <br>
+
+<b> Задача №3. Верно?</b> <br>
+let text = 123 + "456";
+// Ожидаем 579
+console.log(text); <br>
+<mark>ні, буде : 123456; но якщо додати унарний оператор 123 + +"456"тобуде правельно</mark> <br>
+
+<b> Задача №4. Получить строку в верхнем регистре</b> <br>
+let text = 'фрилансер'; <br>
+<mark>console.log(text.toUpperCase())</mark> <br>
+
+<b> Задача №5. Получить подстроку "лан" из:</b> <br>
+let text = 'фрилансер'; <br>
+<mark>console.log(text.slice(3,6))</mark> <br>
+<b> Задача №6. true или false ?</b> <br>
+let text = 'фрилансер';
+console.log(text.includes('лан', 4)); <br>
+<mark>js індекс з нуля, тут буде false <br> console.log(text.includes('лан', 3)); </mark>
+   <script src="js/script.js"></script>
+</body>
+</html>
